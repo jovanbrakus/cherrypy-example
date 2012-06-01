@@ -1,0 +1,9 @@
+{% extends "base.html" %}
+{% block title %}CherryPy Web Server - Log files management{% endblock %}
+{% block logsActive %}active{% endblock %}
+{% block content %}
+    <div class="chapterTitle">Available log files [ <a href="./download/all">download all</a> ]</div>
+    {% for log_file in log_files %}
+        <div class="dottedListItem"><a href="./download/{{ log_file }}">{{ log_file }}</a></div>
+    {% endfor %}
+{% endblock %}

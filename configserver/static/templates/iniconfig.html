@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+{% block title %}CherryPy Web Server - Ini config{% endblock %}
+{% block iniConfigActive %}active{% endblock %}
+
+{% block content %}
+    <div class="chapterTitle">Current Ini-config settings [ <a href="./edit">edit</a> | <a href="./download">download</a> ]</div>
+    
+    <div class="subchapterTitle">Section: general</div>
+    {% for key, value in ini_config.general.items() %}
+            <div class="dottedListItem"><span class="formlabel">{{ key }}:</span><b>{{value}}</b></div>
+    {% endfor %}
+    
+    <div class="subchapterTitle">Section: specific</div>
+    {% for key, value in ini_config.specific.items() %}
+            <div class="dottedListItem"><span class="formlabel">{{ key }}:</span><b>{{value}}</b></div>
+    {% endfor %}    
+{% endblock %}

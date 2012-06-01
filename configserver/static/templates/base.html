@@ -1,0 +1,46 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <meta name="keywords" content="cherrypy">
+  <meta name="description" content="Cherrypy Web Server - Simple demonstration project">
+  <title>{% block title %}{% endblock %}</title>
+  <link href="/static/css/style.css" rel="stylesheet" type="text/css">
+  <script type="text/javascript" src="/static/js/jquery-1.7.2.min.js"></script>
+  <script type="text/javascript" src="/static/js/rollover.js"></script>
+    {% block extrahead %}{% endblock %}
+</head>
+
+<body> 
+<div class="mainContent">
+    <div class="headerHome">        
+      <div class="logoHome"></div>
+      <div id="header">
+	<ul id="topnav">
+	  <li><a href="/" class="{% block overviewActive %}{% endblock %}">Overview</a></li>
+	  <li><a href="/ini" class="{% block iniConfigActive %}{% endblock %}">Configuration</a></li>
+	  <li><a href="/logs" class="{% block logsActive %}{% endblock %}">Log files</a></li>                
+	</ul>
+      </div>
+    </div>    
+  <!-- Main Content -->  
+  <div class="contentHome">
+	{% for message in messages %}
+      <div class="message-{{ message.level }}">{{ message }}</div>
+    {% endfor %}
+    {% block content %}{% endblock %}
+  </div>
+  <!-- End of Content -->
+  <div class="footer">
+    <div class="clientFoot"><a class="orangeLink" href="/">HomePage</a></div>    
+    <div class="companyFoot"><a class="orangeLink" href="#">Project HomePage</a></div>
+    <div class="contactLinkFoot"><a class="orangeLink" href="http://brakus.rs/">by Jovan Brakus</a></div>
+    <div class="supportFoot"><a class="orangeLink" href="http://www.cherrypy.org/">CherryPy HomePage</a></div>
+    <div class="contactFoot">
+	CherryPy Sample project<br>
+	Demonstrating CherryPy<br> 
+	A Minimalist Python Web Framework<br> 
+    </div>
+  </div>
+</body>
+</html>

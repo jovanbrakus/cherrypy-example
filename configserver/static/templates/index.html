@@ -1,0 +1,29 @@
+{% extends "base.html" %}
+{% block title %}CherryPy Server - System overview{% endblock %}
+{% block overviewActive %}active{% endblock %}
+
+{% block content %}
+    <div class="chapterTitle">Config Server</div>
+    <div class="dottedListItem">Version: <b>{{ sw_version }}</b></div>    
+    
+	<div class="chapterTitle">System info</div>
+	<div class="dottedListItem">Server OS info: <b>{{os_info}}</b></div>
+    <div class="dottedListItem">Server time: <b>{{current_time}}</b></div>  
+    
+	<div class="chapterTitle">This server demonstrates basic usage of:</div>
+	<div class="dottedListItem">CherryPy's builtin webserver</div>
+    <div class="dottedListItem">Shows example of CherryPy application structure</div>
+    <div class="dottedListItem">Programatic CherryPy Web Server parametrization</div>
+    <div class="dottedListItem">Basic HTTP Authentication within CherryPy Web Server</div>
+    <div class="dottedListItem">Simple GET&POST request dispatching</div>
+    <div class="dottedListItem">File download from CherryPy served page</div>
+	<div class="dottedListItem">Django-like flash messaging in CherryPy</div>
+    <div class="dottedListItem">Basic Jinja2 template engine usage</div>
+    <div class="dottedListItem">Python's ConfigParser usage (parsing&generating .ini files)</div>
+    <div class="dottedListItem">Python's logging facility usage</div>
+
+	<div class="chapterTitle">Developed using:</div>
+	<div class="dottedListItem">Python 2.7.2</div>
+    <div class="dottedListItem">CherryPy 3.1.2</div>
+	<div class="dottedListItem">Jinja2 2.5.5</div>
+{% endblock %}

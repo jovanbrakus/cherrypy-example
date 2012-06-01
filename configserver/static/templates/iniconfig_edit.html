@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+{% block title %}CherryPy Web Server - Ini-config edit{% endblock %}
+{% block iniConfigActive %}active{% endblock %}
+
+{% block content %}
+    <div class="chapterTitle">Edit Ini-config settings</div>
+    <form method="post" action="">
+    
+    <div class="subchapterTitle">Section: general</div>
+    <div class="dottedListItem"><span class="formlabel">Str param:</span><input type="text" size="20" maxlength="20" name="general_str_param" value="{{ conf['general_str_param'] }}"></div>
+    <div class="dottedListItem"><span class="formlabel">Switch param:</span><input type="checkbox" name="general_switch_param" value="on" {% if conf['general_switch_param'] == 'on' %}checked{% endif %}></div>
+    <div class="dottedListItem"><span class="formlabel">Numerical value:</span><input type="text" size="20" maxlength="20" name="general_numerical_value" value="{{ conf['general_numerical_value'] }}"></div>
+    
+    <div class="subchapterTitle">Section: specific</div>
+    <div class="dottedListItem"><span class="formlabel">Something:</span><input type="text" size="20" maxlength="20" name="specific_something" value="{{ conf['specific_something'] }}"></div>
+    <div class="dottedListItem"><span class="formlabel">Is enabled:</span><input type="checkbox" name="specific_enabled" value="on" {% if conf['specific_enabled'] == 'on' %}checked{% endif %}></div>
+    <div class="dottedListItem"><span class="formlabel">Number:</span><input type="text" size="20" maxlength="20" name="specific_number" value="{{ conf['specific_number'] }}"></div>
+    
+    <div class="dottedListItem"><input type="submit" value="Submit"></div>
+    </form>
+{% endblock %}
